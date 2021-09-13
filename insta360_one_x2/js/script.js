@@ -52,7 +52,7 @@ const MenuAnimation = lottie.loadAnimation({
   renderer: "svg",
   loop: false,
   autoplay: false,
-  path: "./img/icon/mobile_menu.json"
+  path: "../img/icon/mobile_menu.json"
 });
 var MobileMenuState = false;
 MobileMenu.addEventListener("click", () => {
