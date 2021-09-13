@@ -52,7 +52,7 @@ const MenuAnimation = lottie.loadAnimation({
   renderer: "svg",
   loop: false,
   autoplay: false,
-  path: "../img/icon/mobile_menu.json"
+  path: "./img/icon/mobile_menu.json"
 });
 var MobileMenuState = false;
 MobileMenu.addEventListener("click", () => {
@@ -126,42 +126,42 @@ lottie.loadAnimation({
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "../img/icon/features/water_drops.json"
+  path: "./img/icon/features/water_drops.json"
 });
 lottie.loadAnimation({
   container: timeshift,
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "../img/icon/features/clock.json"
+  path: "./img/icon/features/clock.json"
 });
 lottie.loadAnimation({
   container: hdr,
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "../img/icon/features/hdr.json"
+  path: "./img/icon/features/hdr.json"
 });
 lottie.loadAnimation({
   container: voice,
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "../img/icon/features/voice.json"
+  path: "./img/icon/features/voice.json"
 });
 lottie.loadAnimation({
   container: track,
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "../img/icon/features/tracking.json"
+  path: "./img/icon/features/tracking.json"
 });
 lottie.loadAnimation({
   container: stick,
   renderer: "svg",
   loop: true,
   autoplay: true,
-  path: "../img/icon/features/selfie_stick.json"
+  path: "./img/icon/features/selfie_stick.json"
 });
 const info = [
   "color: #f0f0f0",

@@ -74,7 +74,7 @@ const MenuAnimation = lottie.loadAnimation({
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    path: '../img/icon/mobile_menu.json'
+    path: './img/icon/mobile_menu.json'
 });
 
 
@@ -185,7 +185,7 @@ lottie.loadAnimation({
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '../img/icon/features/water_drops.json'
+    path: './img/icon/features/water_drops.json'
 });
 
 lottie.loadAnimation({
@@ -193,7 +193,7 @@ lottie.loadAnimation({
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '../img/icon/features/clock.json'
+    path: './img/icon/features/clock.json'
 });
 
 lottie.loadAnimation({
@@ -201,7 +201,7 @@ lottie.loadAnimation({
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '../img/icon/features/hdr.json'
+    path: './img/icon/features/hdr.json'
 });
 
 lottie.loadAnimation({
@@ -209,7 +209,7 @@ lottie.loadAnimation({
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '../img/icon/features/voice.json'
+    path: './img/icon/features/voice.json'
 });
 
 
@@ -218,7 +218,7 @@ lottie.loadAnimation({
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '../img/icon/features/tracking.json'
+    path: './img/icon/features/tracking.json'
 });
 
 
@@ -227,7 +227,7 @@ lottie.loadAnimation({
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '../img/icon/features/selfie_stick.json'
+    path: './img/icon/features/selfie_stick.json'
 });
 
 
