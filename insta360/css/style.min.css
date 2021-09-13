@@ -1,0 +1,674 @@
+@charset "UTF-8";
+/*! Marcus Harting */
+@import url("https://fonts.googleapis.com/css2?family=Galada&family=Roboto:ital,wght@0,100;0,400;0,500;0,700;1,400;1,700&display=swap");
+:root {
+  --color_p: #da2f2f;
+  --color_h: #e95548;
+  --color_s: #F3D93A;
+  --color_3: #f0f0f0;
+  --color_3_number: 240, 240, 240;
+  --color_4: #363636;
+  --color_4_number: 54, 54, 54;
+  --color_lightw: #e2e2e2;
+  --color_lightd: #3f3f3f; }
+
+::-webkit-scrollbar {
+  width: 0.7rem;
+  height: 0.7rem; }
+
+::-webkit-scrollbar-thumb {
+  background: var(--color_p);
+  border: solid 2px var(--color_3);
+  border-radius: 20px; }
+
+::-webkit-scrollbar-track {
+  background: var(--color_3); }
+
+html {
+  scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: var(--color_3); }
+
+/*! ################################ */
+/*! Responsive Flexbox/Grid Klassen */
+/*! ################################ */
+.flex_h_c {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.flex_v_c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.grid_c {
+  display: grid;
+  place-items: center; }
+
+/*! ################################ */
+/*! Animations + Klassen */
+/*! ################################ */
+.animShow {
+  transform: scale(1) !important; }
+
+/*! ############################## */
+/*! Navigation */
+/*! ############################## */
+nav {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  background: #da2f2f;
+  /*! ############################## */
+  /*! Darkmode */
+  /*! ############################## */ }
+  @media (max-width: 1023px) {
+    nav {
+      height: 80px; } }
+  nav .Nav_Elements {
+    justify-content: space-around;
+    width: 70%;
+    max-width: 1000px; }
+    @media (max-width: 1024px) {
+      nav .Nav_Elements {
+        width: 100%; } }
+  nav .logo {
+    position: absolute;
+    top: 8px;
+    width: 40px;
+    left: 5%;
+    transition: filter 0.3s ease; }
+    @media (max-width: 1023px) {
+      nav .logo {
+        left: 50%;
+        width: 50px;
+        transform: translateX(-50%);
+        top: 15px; } }
+  nav ul {
+    list-style: none;
+    width: 50%;
+    min-width: 640px;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem; }
+    @media (max-width: 1023px) {
+      nav ul {
+        position: absolute;
+        top: 0px;
+        width: 100%;
+        height: 100vh;
+        padding-top: 20%;
+        font-size: 2.5rem;
+        flex-direction: column !important;
+        justify-content: start !important;
+        text-align: center;
+        background: rgba(218, 47, 47, 0.8);
+        -webkit-backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px);
+        min-width: 0px;
+        transition: right 0.3s ease;
+        right: -100%; } }
+    nav ul li {
+      display: block;
+      white-space: nowrap;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      color: #fff;
+      transition: background 0.3s ease; }
+      @media (max-width: 1023px) {
+        nav ul li {
+          padding: 10px 0px;
+          text-align: center;
+          margin: 0; } }
+      nav ul li a {
+        display: block;
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        padding: 20px 20px;
+        transition: color 0.3s ease; }
+        @media (max-width: 1023px) {
+          nav ul li a {
+            padding: 10px 0px;
+            color: white;
+            text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6); } }
+      nav ul li:hover {
+        background: rgba(255, 255, 255, 0.2);
+        cursor: pointer; }
+      nav ul li:hover > a {
+        color: #fff; }
+  nav .ActiveMobileMenu {
+    right: 0px; }
+  nav .MobileButton {
+    width: 80px;
+    position: absolute;
+    top: 0;
+    right: 5%;
+    display: none; }
+    @media (max-width: 1023px) {
+      nav .MobileButton {
+        display: block; } }
+    nav .MobileButton:hover {
+      cursor: pointer; }
+    nav .MobileButton svg path {
+      fill: var(--color_3); }
+  nav .darkmode_schalter {
+    width: 50px;
+    position: absolute;
+    right: 5%;
+    top: 15px; }
+    @media (max-width: 1023px) {
+      nav .darkmode_schalter {
+        right: 0;
+        left: 5%;
+        top: 15px;
+        width: 100px;
+        padding: 0px 0px; } }
+    nav .darkmode_schalter:hover {
+      cursor: pointer; }
+    nav .darkmode_schalter .bg {
+      fill: var(--color_3); }
+    nav .darkmode_schalter .filler {
+      fill: var(--color_p); }
+    nav .darkmode_schalter .sunline {
+      fill: none;
+      stroke: var(--color_p);
+      stroke-miterlimit: 10;
+      stroke-width: 4.89px; }
+    nav .darkmode_schalter #Schalter {
+      transition: transform 0.3s ease; }
+    nav .darkmode_schalter .SchalterActive {
+      transform: translateX(50%); }
+
+/*! ############################## */
+/*! Kaufen Button */
+/*! ############################## */
+.kaufenButton {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  padding: 15px;
+  width: 20%;
+  min-width: 150px;
+  border-radius: 20px;
+  margin: 3rem auto 0rem auto;
+  color: #da2f2f;
+  font-size: 1rem;
+  background: #f0f0f0;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.3s ease; }
+  .kaufenButton:hover {
+    box-shadow: 0px 0px 20px rgba(240, 240, 240, 0.5);
+    transform: scale(1.05); }
+
+/*! ############################## */
+/*! Vorstellung / Start */
+/*! ############################## */
+.Start {
+  height: 100vh;
+  width: 100%;
+  background: #da2f2f;
+  overflow: hidden;
+  position: relative; }
+  @media (max-width: 1024px) {
+    .Start .flex_h_c {
+      flex-wrap: wrap; } }
+  .Start .headlines {
+    padding: 30vh 0px 0px 5%;
+    width: 40%;
+    text-align: center; }
+    @media (max-width: 1024px) {
+      .Start .headlines {
+        width: 100%;
+        padding-top: 20vh; } }
+    .Start .headlines h1 {
+      margin-top: 20%;
+      font-family: "Roboto", sans-serif;
+      font-size: 2.8rem;
+      color: #f0f0f0;
+      margin: 0px; }
+    .Start .headlines h2 {
+      color: #F3D93A;
+      font-family: "Galada", cursive;
+      font-weight: 200;
+      margin: 0px;
+      font-size: 1.8rem; }
+  .Start .Wave {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    width: 100%;
+    min-width: 1600px; }
+    .Start .Wave path {
+      fill: var(--color_3); }
+
+.insta_1 {
+  width: 600px;
+  margin-top: 100px; }
+  @media (max-width: 1024px) {
+    .insta_1 {
+      width: 100%;
+      min-width: 500px;
+      max-width: 600px;
+      margin-top: 0px; } }
+
+/*! ######################################################## */
+/*! ONEX2, Flowstate, Features, Premium Set, Social_Media */
+/*! ######################################################## */
+.ONEX2 {
+  min-height: 100vh;
+  position: relative; }
+  @media (max-width: 1024px) {
+    .ONEX2 {
+      flex-wrap: wrap-reverse !important; } }
+  .ONEX2 .Image360 {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    z-index: 1; }
+
+.Flowstate, .ONEX2, .Features, .Premium_Set, .Social_Media {
+  background: url("../img/BG/vortex.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  /*! ############################## */
+  /*! Textboxen */
+  /*! ############################## */ }
+  @media (max-width: 1024px) {
+    .Flowstate, .ONEX2, .Features, .Premium_Set, .Social_Media {
+      flex-wrap: wrap; } }
+  .Flowstate:before, .ONEX2:before, .Features:before, .Premium_Set:before, .Social_Media:before {
+    content: ' ';
+    display: block;
+    background: rgba(218, 47, 47, 0.5);
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+  .Flowstate .imageContainer, .ONEX2 .imageContainer, .Features .imageContainer, .Premium_Set .imageContainer, .Social_Media .imageContainer {
+    height: 100%;
+    min-height: 100vh;
+    padding: 0px 5%;
+    position: relative;
+    width: 600px; }
+    @media (max-width: 1600px) {
+      .Flowstate .imageContainer, .ONEX2 .imageContainer, .Features .imageContainer, .Premium_Set .imageContainer, .Social_Media .imageContainer {
+        width: 500px; } }
+    @media (max-width: 1024px) {
+      .Flowstate .imageContainer, .ONEX2 .imageContainer, .Features .imageContainer, .Premium_Set .imageContainer, .Social_Media .imageContainer {
+        min-height: 500px; } }
+    @media (max-width: 640px) {
+      .Flowstate .imageContainer, .ONEX2 .imageContainer, .Features .imageContainer, .Premium_Set .imageContainer, .Social_Media .imageContainer {
+        width: 300px;
+        padding: 0px; } }
+    .Flowstate .imageContainer .img_side, .ONEX2 .imageContainer .img_side, .Features .imageContainer .img_side, .Premium_Set .imageContainer .img_side, .Social_Media .imageContainer .img_side {
+      position: absolute;
+      top: 50%;
+      border-radius: 20px;
+      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3); }
+      @media (max-width: 1024px) {
+        .Flowstate .imageContainer .img_side, .ONEX2 .imageContainer .img_side, .Features .imageContainer .img_side, .Premium_Set .imageContainer .img_side, .Social_Media .imageContainer .img_side {
+          top: 0%;
+          position: relative; } }
+    .Flowstate .imageContainer .flowstate_img, .ONEX2 .imageContainer .flowstate_img, .Features .imageContainer .flowstate_img, .Premium_Set .imageContainer .flowstate_img, .Social_Media .imageContainer .flowstate_img {
+      width: 600px;
+      height: 600px; }
+      @media (max-width: 1600px) {
+        .Flowstate .imageContainer .flowstate_img, .ONEX2 .imageContainer .flowstate_img, .Features .imageContainer .flowstate_img, .Premium_Set .imageContainer .flowstate_img, .Social_Media .imageContainer .flowstate_img {
+          width: 500px;
+          height: 500px; } }
+      @media (max-width: 640px) {
+        .Flowstate .imageContainer .flowstate_img, .ONEX2 .imageContainer .flowstate_img, .Features .imageContainer .flowstate_img, .Premium_Set .imageContainer .flowstate_img, .Social_Media .imageContainer .flowstate_img {
+          width: 300px;
+          height: 300px; } }
+  @media (max-width: 640px) {
+    .Flowstate .oneX2_img_container, .ONEX2 .oneX2_img_container, .Features .oneX2_img_container, .Premium_Set .oneX2_img_container, .Social_Media .oneX2_img_container {
+      width: 350px; } }
+  .Flowstate .oneX2_img_container .oneX2_img, .ONEX2 .oneX2_img_container .oneX2_img, .Features .oneX2_img_container .oneX2_img, .Premium_Set .oneX2_img_container .oneX2_img, .Social_Media .oneX2_img_container .oneX2_img {
+    width: calc(600px - 60px);
+    height: calc(810px - 60px);
+    box-shadow: 0px 0px 0px black; }
+    @media (max-width: 1600px) {
+      .Flowstate .oneX2_img_container .oneX2_img, .ONEX2 .oneX2_img_container .oneX2_img, .Features .oneX2_img_container .oneX2_img, .Premium_Set .oneX2_img_container .oneX2_img, .Social_Media .oneX2_img_container .oneX2_img {
+        width: calc(600px - 100px);
+        height: calc(810px - 100px); } }
+    @media (max-width: 640px) {
+      .Flowstate .oneX2_img_container .oneX2_img, .ONEX2 .oneX2_img_container .oneX2_img, .Features .oneX2_img_container .oneX2_img, .Premium_Set .oneX2_img_container .oneX2_img, .Social_Media .oneX2_img_container .oneX2_img {
+        width: calc(600px - 250px);
+        height: calc(810px - 300px); } }
+  .Flowstate .premium_set_img_container, .ONEX2 .premium_set_img_container, .Features .premium_set_img_container, .Premium_Set .premium_set_img_container, .Social_Media .premium_set_img_container {
+    width: 600px;
+    position: relative; }
+    @media (max-width: 1024px) {
+      .Flowstate .premium_set_img_container, .ONEX2 .premium_set_img_container, .Features .premium_set_img_container, .Premium_Set .premium_set_img_container, .Social_Media .premium_set_img_container {
+        width: 500px; } }
+    .Flowstate .premium_set_img_container .premium_set_img, .ONEX2 .premium_set_img_container .premium_set_img, .Features .premium_set_img_container .premium_set_img, .Premium_Set .premium_set_img_container .premium_set_img, .Social_Media .premium_set_img_container .premium_set_img {
+      position: absolute !important;
+      width: 600px;
+      height: 600px;
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important; }
+      @media (max-width: 1024px) {
+        .Flowstate .premium_set_img_container .premium_set_img, .ONEX2 .premium_set_img_container .premium_set_img, .Features .premium_set_img_container .premium_set_img, .Premium_Set .premium_set_img_container .premium_set_img, .Social_Media .premium_set_img_container .premium_set_img {
+          width: 500px;
+          height: 500px;
+          top: 0px; } }
+      @media (max-width: 640px) {
+        .Flowstate .premium_set_img_container .premium_set_img, .ONEX2 .premium_set_img_container .premium_set_img, .Features .premium_set_img_container .premium_set_img, .Premium_Set .premium_set_img_container .premium_set_img, .Social_Media .premium_set_img_container .premium_set_img {
+          padding: 0px;
+          width: 300;
+          top: 0%; } }
+  .Flowstate .flowstate_info, .Flowstate .OneX2_info, .Flowstate .features_info, .Flowstate .premium_set_info, .Flowstate .social_media_info, .ONEX2 .flowstate_info, .ONEX2 .OneX2_info, .ONEX2 .features_info, .ONEX2 .premium_set_info, .ONEX2 .social_media_info, .Features .flowstate_info, .Features .OneX2_info, .Features .features_info, .Features .premium_set_info, .Features .social_media_info, .Premium_Set .flowstate_info, .Premium_Set .OneX2_info, .Premium_Set .features_info, .Premium_Set .premium_set_info, .Premium_Set .social_media_info, .Social_Media .flowstate_info, .Social_Media .OneX2_info, .Social_Media .features_info, .Social_Media .premium_set_info, .Social_Media .social_media_info {
+    padding: 35vh 10% 0% 10%;
+    z-index: 2; }
+    @media (max-width: 1024px) {
+      .Flowstate .flowstate_info, .Flowstate .OneX2_info, .Flowstate .features_info, .Flowstate .premium_set_info, .Flowstate .social_media_info, .ONEX2 .flowstate_info, .ONEX2 .OneX2_info, .ONEX2 .features_info, .ONEX2 .premium_set_info, .ONEX2 .social_media_info, .Features .flowstate_info, .Features .OneX2_info, .Features .features_info, .Features .premium_set_info, .Features .social_media_info, .Premium_Set .flowstate_info, .Premium_Set .OneX2_info, .Premium_Set .features_info, .Premium_Set .premium_set_info, .Premium_Set .social_media_info, .Social_Media .flowstate_info, .Social_Media .OneX2_info, .Social_Media .features_info, .Social_Media .premium_set_info, .Social_Media .social_media_info {
+        padding: 0 10%;
+        margin-top: 100px; } }
+    .Flowstate .flowstate_info h2, .Flowstate .OneX2_info h2, .Flowstate .features_info h2, .Flowstate .premium_set_info h2, .Flowstate .social_media_info h2, .ONEX2 .flowstate_info h2, .ONEX2 .OneX2_info h2, .ONEX2 .features_info h2, .ONEX2 .premium_set_info h2, .ONEX2 .social_media_info h2, .Features .flowstate_info h2, .Features .OneX2_info h2, .Features .features_info h2, .Features .premium_set_info h2, .Features .social_media_info h2, .Premium_Set .flowstate_info h2, .Premium_Set .OneX2_info h2, .Premium_Set .features_info h2, .Premium_Set .premium_set_info h2, .Premium_Set .social_media_info h2, .Social_Media .flowstate_info h2, .Social_Media .OneX2_info h2, .Social_Media .features_info h2, .Social_Media .premium_set_info h2, .Social_Media .social_media_info h2 {
+      font-family: "Roboto", sans-serif;
+      color: #f0f0f0;
+      font-size: 2rem;
+      margin: 0;
+      padding: 0; }
+      @media (max-width: 640px) {
+        .Flowstate .flowstate_info h2, .Flowstate .OneX2_info h2, .Flowstate .features_info h2, .Flowstate .premium_set_info h2, .Flowstate .social_media_info h2, .ONEX2 .flowstate_info h2, .ONEX2 .OneX2_info h2, .ONEX2 .features_info h2, .ONEX2 .premium_set_info h2, .ONEX2 .social_media_info h2, .Features .flowstate_info h2, .Features .OneX2_info h2, .Features .features_info h2, .Features .premium_set_info h2, .Features .social_media_info h2, .Premium_Set .flowstate_info h2, .Premium_Set .OneX2_info h2, .Premium_Set .features_info h2, .Premium_Set .premium_set_info h2, .Premium_Set .social_media_info h2, .Social_Media .flowstate_info h2, .Social_Media .OneX2_info h2, .Social_Media .features_info h2, .Social_Media .premium_set_info h2, .Social_Media .social_media_info h2 {
+          text-align: center; } }
+    .Flowstate .flowstate_info h3, .Flowstate .OneX2_info h3, .Flowstate .features_info h3, .Flowstate .premium_set_info h3, .Flowstate .social_media_info h3, .ONEX2 .flowstate_info h3, .ONEX2 .OneX2_info h3, .ONEX2 .features_info h3, .ONEX2 .premium_set_info h3, .ONEX2 .social_media_info h3, .Features .flowstate_info h3, .Features .OneX2_info h3, .Features .features_info h3, .Features .premium_set_info h3, .Features .social_media_info h3, .Premium_Set .flowstate_info h3, .Premium_Set .OneX2_info h3, .Premium_Set .features_info h3, .Premium_Set .premium_set_info h3, .Premium_Set .social_media_info h3, .Social_Media .flowstate_info h3, .Social_Media .OneX2_info h3, .Social_Media .features_info h3, .Social_Media .premium_set_info h3, .Social_Media .social_media_info h3 {
+      font-family: "Galada", cursive;
+      color: var(--color_s);
+      font-weight: 200;
+      margin: 0;
+      padding: 0; }
+      @media (max-width: 640px) {
+        .Flowstate .flowstate_info h3, .Flowstate .OneX2_info h3, .Flowstate .features_info h3, .Flowstate .premium_set_info h3, .Flowstate .social_media_info h3, .ONEX2 .flowstate_info h3, .ONEX2 .OneX2_info h3, .ONEX2 .features_info h3, .ONEX2 .premium_set_info h3, .ONEX2 .social_media_info h3, .Features .flowstate_info h3, .Features .OneX2_info h3, .Features .features_info h3, .Features .premium_set_info h3, .Features .social_media_info h3, .Premium_Set .flowstate_info h3, .Premium_Set .OneX2_info h3, .Premium_Set .features_info h3, .Premium_Set .premium_set_info h3, .Premium_Set .social_media_info h3, .Social_Media .flowstate_info h3, .Social_Media .OneX2_info h3, .Social_Media .features_info h3, .Social_Media .premium_set_info h3, .Social_Media .social_media_info h3 {
+          text-align: center; } }
+    .Flowstate .flowstate_info p, .Flowstate .OneX2_info p, .Flowstate .features_info p, .Flowstate .premium_set_info p, .Flowstate .social_media_info p, .ONEX2 .flowstate_info p, .ONEX2 .OneX2_info p, .ONEX2 .features_info p, .ONEX2 .premium_set_info p, .ONEX2 .social_media_info p, .Features .flowstate_info p, .Features .OneX2_info p, .Features .features_info p, .Features .premium_set_info p, .Features .social_media_info p, .Premium_Set .flowstate_info p, .Premium_Set .OneX2_info p, .Premium_Set .features_info p, .Premium_Set .premium_set_info p, .Premium_Set .social_media_info p, .Social_Media .flowstate_info p, .Social_Media .OneX2_info p, .Social_Media .features_info p, .Social_Media .premium_set_info p, .Social_Media .social_media_info p {
+      max-width: 500px;
+      width: clamp(200px 50% 400px);
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      color: #e2e2e2; }
+      @media (max-width: 1600px) {
+        .Flowstate .flowstate_info p, .Flowstate .OneX2_info p, .Flowstate .features_info p, .Flowstate .premium_set_info p, .Flowstate .social_media_info p, .ONEX2 .flowstate_info p, .ONEX2 .OneX2_info p, .ONEX2 .features_info p, .ONEX2 .premium_set_info p, .ONEX2 .social_media_info p, .Features .flowstate_info p, .Features .OneX2_info p, .Features .features_info p, .Features .premium_set_info p, .Features .social_media_info p, .Premium_Set .flowstate_info p, .Premium_Set .OneX2_info p, .Premium_Set .features_info p, .Premium_Set .premium_set_info p, .Premium_Set .social_media_info p, .Social_Media .flowstate_info p, .Social_Media .OneX2_info p, .Social_Media .features_info p, .Social_Media .premium_set_info p, .Social_Media .social_media_info p {
+          max-width: 300px; } }
+      @media (max-width: 640px) {
+        .Flowstate .flowstate_info p, .Flowstate .OneX2_info p, .Flowstate .features_info p, .Flowstate .premium_set_info p, .Flowstate .social_media_info p, .ONEX2 .flowstate_info p, .ONEX2 .OneX2_info p, .ONEX2 .features_info p, .ONEX2 .premium_set_info p, .ONEX2 .social_media_info p, .Features .flowstate_info p, .Features .OneX2_info p, .Features .features_info p, .Features .premium_set_info p, .Features .social_media_info p, .Premium_Set .flowstate_info p, .Premium_Set .OneX2_info p, .Premium_Set .features_info p, .Premium_Set .premium_set_info p, .Premium_Set .social_media_info p, .Social_Media .flowstate_info p, .Social_Media .OneX2_info p, .Social_Media .features_info p, .Social_Media .premium_set_info p, .Social_Media .social_media_info p {
+          text-align: center; } }
+    .Flowstate .flowstate_info .bigger_paragraph, .Flowstate .OneX2_info .bigger_paragraph, .Flowstate .features_info .bigger_paragraph, .Flowstate .premium_set_info .bigger_paragraph, .Flowstate .social_media_info .bigger_paragraph, .ONEX2 .flowstate_info .bigger_paragraph, .ONEX2 .OneX2_info .bigger_paragraph, .ONEX2 .features_info .bigger_paragraph, .ONEX2 .premium_set_info .bigger_paragraph, .ONEX2 .social_media_info .bigger_paragraph, .Features .flowstate_info .bigger_paragraph, .Features .OneX2_info .bigger_paragraph, .Features .features_info .bigger_paragraph, .Features .premium_set_info .bigger_paragraph, .Features .social_media_info .bigger_paragraph, .Premium_Set .flowstate_info .bigger_paragraph, .Premium_Set .OneX2_info .bigger_paragraph, .Premium_Set .features_info .bigger_paragraph, .Premium_Set .premium_set_info .bigger_paragraph, .Premium_Set .social_media_info .bigger_paragraph, .Social_Media .flowstate_info .bigger_paragraph, .Social_Media .OneX2_info .bigger_paragraph, .Social_Media .features_info .bigger_paragraph, .Social_Media .premium_set_info .bigger_paragraph, .Social_Media .social_media_info .bigger_paragraph {
+      max-width: 600px !important;
+      width: clamp(300px 50% 500px) !important; }
+      @media (max-width: 1600px) {
+        .Flowstate .flowstate_info .bigger_paragraph, .Flowstate .OneX2_info .bigger_paragraph, .Flowstate .features_info .bigger_paragraph, .Flowstate .premium_set_info .bigger_paragraph, .Flowstate .social_media_info .bigger_paragraph, .ONEX2 .flowstate_info .bigger_paragraph, .ONEX2 .OneX2_info .bigger_paragraph, .ONEX2 .features_info .bigger_paragraph, .ONEX2 .premium_set_info .bigger_paragraph, .ONEX2 .social_media_info .bigger_paragraph, .Features .flowstate_info .bigger_paragraph, .Features .OneX2_info .bigger_paragraph, .Features .features_info .bigger_paragraph, .Features .premium_set_info .bigger_paragraph, .Features .social_media_info .bigger_paragraph, .Premium_Set .flowstate_info .bigger_paragraph, .Premium_Set .OneX2_info .bigger_paragraph, .Premium_Set .features_info .bigger_paragraph, .Premium_Set .premium_set_info .bigger_paragraph, .Premium_Set .social_media_info .bigger_paragraph, .Social_Media .flowstate_info .bigger_paragraph, .Social_Media .OneX2_info .bigger_paragraph, .Social_Media .features_info .bigger_paragraph, .Social_Media .premium_set_info .bigger_paragraph, .Social_Media .social_media_info .bigger_paragraph {
+          max-width: 500px !important; } }
+  .Flowstate .OneX2_info, .ONEX2 .OneX2_info, .Features .OneX2_info, .Premium_Set .OneX2_info, .Social_Media .OneX2_info {
+    padding: 25vh 10% 0% 10%; }
+    @media (max-width: 1024px) {
+      .Flowstate .OneX2_info, .ONEX2 .OneX2_info, .Features .OneX2_info, .Premium_Set .OneX2_info, .Social_Media .OneX2_info {
+        padding: 0 10%;
+        margin-top: 20px; } }
+  .Flowstate .features_info, .ONEX2 .features_info, .Features .features_info, .Premium_Set .features_info, .Social_Media .features_info {
+    padding: 4rem 0; }
+    .Flowstate .features_info h2, .Flowstate .features_info h3, .ONEX2 .features_info h2, .ONEX2 .features_info h3, .Features .features_info h2, .Features .features_info h3, .Premium_Set .features_info h2, .Premium_Set .features_info h3, .Social_Media .features_info h2, .Social_Media .features_info h3 {
+      text-align: center !important; }
+    .Flowstate .features_info h2, .ONEX2 .features_info h2, .Features .features_info h2, .Premium_Set .features_info h2, .Social_Media .features_info h2 {
+      font-size: 2.5rem; }
+    .Flowstate .features_info p, .ONEX2 .features_info p, .Features .features_info p, .Premium_Set .features_info p, .Social_Media .features_info p {
+      max-width: 700px;
+      text-align: center;
+      padding: 10px 10%; }
+  .Flowstate .premium_set_info, .ONEX2 .premium_set_info, .Features .premium_set_info, .Premium_Set .premium_set_info, .Social_Media .premium_set_info {
+    padding: 35vh 5% 0% 5%; }
+    @media (max-width: 1024px) {
+      .Flowstate .premium_set_info, .ONEX2 .premium_set_info, .Features .premium_set_info, .Premium_Set .premium_set_info, .Social_Media .premium_set_info {
+        padding: 0 10%;
+        margin-top: 100px; } }
+    @media (max-width: 1024px) {
+      .Flowstate .premium_set_info h2, .Flowstate .premium_set_info h3, .ONEX2 .premium_set_info h2, .ONEX2 .premium_set_info h3, .Features .premium_set_info h2, .Features .premium_set_info h3, .Premium_Set .premium_set_info h2, .Premium_Set .premium_set_info h3, .Social_Media .premium_set_info h2, .Social_Media .premium_set_info h3 {
+        text-align: center; } }
+    .Flowstate .premium_set_info .BottomButton, .ONEX2 .premium_set_info .BottomButton, .Features .premium_set_info .BottomButton, .Premium_Set .premium_set_info .BottomButton, .Social_Media .premium_set_info .BottomButton {
+      background: var(--color_p);
+      color: var(--color_3);
+      margin: 0 0 0 20px;
+      display: block;
+      width: 100px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3); }
+      @media (max-width: 1024px) {
+        .Flowstate .premium_set_info .BottomButton, .ONEX2 .premium_set_info .BottomButton, .Features .premium_set_info .BottomButton, .Premium_Set .premium_set_info .BottomButton, .Social_Media .premium_set_info .BottomButton {
+          margin: 0 auto; } }
+      .Flowstate .premium_set_info .BottomButton:hover, .ONEX2 .premium_set_info .BottomButton:hover, .Features .premium_set_info .BottomButton:hover, .Premium_Set .premium_set_info .BottomButton:hover, .Social_Media .premium_set_info .BottomButton:hover {
+        background: var(--color_h);
+        box-shadow: 0px 0px 10px var(--color_h); }
+  .Flowstate .premium_set_info > .bigger_paragraph, .ONEX2 .premium_set_info > .bigger_paragraph, .Features .premium_set_info > .bigger_paragraph, .Premium_Set .premium_set_info > .bigger_paragraph, .Social_Media .premium_set_info > .bigger_paragraph {
+    max-width: 400px;
+    padding: 0 5%; }
+  .Flowstate .social_media_info, .ONEX2 .social_media_info, .Features .social_media_info, .Premium_Set .social_media_info, .Social_Media .social_media_info {
+    padding-top: 100px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 40px; }
+    .Flowstate .social_media_info h2, .ONEX2 .social_media_info h2, .Features .social_media_info h2, .Premium_Set .social_media_info h2, .Social_Media .social_media_info h2 {
+      font-size: 2.5rem; }
+    .Flowstate .social_media_info h3, .ONEX2 .social_media_info h3, .Features .social_media_info h3, .Premium_Set .social_media_info h3, .Social_Media .social_media_info h3 {
+      margin-top: 5px;
+      font-size: 1.3rem; }
+    .Flowstate .social_media_info p, .ONEX2 .social_media_info p, .Features .social_media_info p, .Premium_Set .social_media_info p, .Social_Media .social_media_info p {
+      margin: 20px auto 0 auto; }
+    @media (max-width: 1024px) {
+      .Flowstate .social_media_info, .ONEX2 .social_media_info, .Features .social_media_info, .Premium_Set .social_media_info, .Social_Media .social_media_info {
+        margin-top: 0; } }
+  .Flowstate .socialIcons, .ONEX2 .socialIcons, .Features .socialIcons, .Premium_Set .socialIcons, .Social_Media .socialIcons {
+    position: relative; }
+    .Flowstate .socialIcons a, .ONEX2 .socialIcons a, .Features .socialIcons a, .Premium_Set .socialIcons a, .Social_Media .socialIcons a {
+      width: 80px;
+      height: 80px;
+      margin: 0px 20px; }
+      .Flowstate .socialIcons a svg, .ONEX2 .socialIcons a svg, .Features .socialIcons a svg, .Premium_Set .socialIcons a svg, .Social_Media .socialIcons a svg {
+        width: 70px;
+        transition: all 0.3s ease; }
+        .Flowstate .socialIcons a svg:hover, .ONEX2 .socialIcons a svg:hover, .Features .socialIcons a svg:hover, .Premium_Set .socialIcons a svg:hover, .Social_Media .socialIcons a svg:hover {
+          width: 80px; }
+        .Flowstate .socialIcons a svg path, .ONEX2 .socialIcons a svg path, .Features .socialIcons a svg path, .Premium_Set .socialIcons a svg path, .Social_Media .socialIcons a svg path {
+          fill: #f0f0f0; }
+
+/*! ######################################################## */
+/*! Social Media Überschreiben */
+/*! ######################################################## */
+.Social_Media {
+  min-height: 580px;
+  padding-bottom: 40px; }
+  .Social_Media:before {
+    height: auto;
+    min-height: 620px; }
+
+/*! ######################################################## */
+/*! Features Überschreiben */
+/*! ######################################################## */
+.Features {
+  margin-bottom: 100px;
+  /*! Feature Boxen */ }
+  .Features .feature_container {
+    flex-wrap: wrap; }
+    .Features .feature_container .feature_box {
+      background: var(--color_p);
+      z-index: 2;
+      width: 300px;
+      padding: 50px;
+      margin: 10px 5%;
+      border-radius: 20px;
+      box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3);
+      transform: scale(0.5);
+      transition: transform 0.3s ease; }
+      .Features .feature_container .feature_box .lottieIcon {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto; }
+        .Features .feature_container .feature_box .lottieIcon svg path {
+          fill: var(--color_3); }
+      .Features .feature_container .feature_box h3 {
+        font-family: "Roboto", sans-serif;
+        font-size: 1.5rem;
+        text-align: center;
+        color: var(--color_lightd) !important; }
+      .Features .feature_container .feature_box p {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        color: var(--color_lightd) !important;
+        text-align: left; }
+
+/*! ############################## */
+/*! Google-Maps */
+/*! ############################## */
+.GoogleMapsSection {
+  border-top: 3px var(--color_p) solid; }
+  .GoogleMapsSection h2 {
+    font-family: "Roboto", sans-serif;
+    margin: 70px 0 0 0;
+    color: var(--color_4);
+    font-size: 2rem;
+    text-align: center; }
+  .GoogleMapsSection h3 {
+    font-family: "Galada", cursive;
+    text-align: center;
+    color: var(--color_p);
+    font-weight: 200;
+    font-size: 1.3rem;
+    margin: 10px 0 0 0; }
+  .GoogleMapsSection p {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: var(--color_lightw);
+    text-align: center;
+    max-width: 700px;
+    min-width: 250px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px 0px 40px 0px; }
+  .GoogleMapsSection .GoogleMaps {
+    height: 600px;
+    width: 70%;
+    margin: 0 auto 20px auto;
+    transform: scale(0.5);
+    transition: transform 0.3s ease; }
+    @media (max-width: 640px) {
+      .GoogleMapsSection .GoogleMaps {
+        height: 300px; } }
+
+/*! ############################## */
+/*! Spezifikationen */
+/*! ############################## */
+.Specs {
+  position: relative;
+  background: url("../img/BG/vortex.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh; }
+  .Specs:before {
+    content: ' ';
+    display: block;
+    background: rgba(218, 47, 47, 0.5);
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+  @media (max-width: 1024px) {
+    .Specs {
+      flex-wrap: wrap;
+      overflow: hidden; } }
+  .Specs h2 {
+    color: #f0f0f0;
+    font-size: 2rem;
+    margin: 100px 0 0 0; }
+    @media (max-width: 1024px) {
+      .Specs h2 {
+        text-align: center; } }
+  .Specs h3 {
+    color: #F3D93A;
+    margin: 0;
+    font-family: "Galada", cursive;
+    font-weight: 200;
+    font-size: 1.4rem; }
+    @media (max-width: 1024px) {
+      .Specs h3 {
+        text-align: center; } }
+  .Specs .SpecList {
+    font-family: "Roboto", sans-serif;
+    color: #e2e2e2;
+    padding: 0px 5%;
+    z-index: 2; }
+    @media (max-width: 1024px) {
+      .Specs .SpecList {
+        background: rgba(54, 54, 54, 0.7);
+        -webkit-backdrop-filter: blur(2px);
+                backdrop-filter: blur(2px);
+        box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.3); } }
+    .Specs .SpecList ul {
+      list-style: none;
+      letter-spacing: 0.04rem;
+      font-size: 1.1rem; }
+      .Specs .SpecList ul li {
+        line-height: 34px; }
+        .Specs .SpecList ul li b {
+          color: #F3D93A; }
+        .Specs .SpecList ul li .u_punkt_h {
+          color: #f0f0f0;
+          line-height: 10px; }
+  .Specs img {
+    width: 300px;
+    height: auto;
+    padding: 0px 10% 0 10%;
+    margin-top: 40px;
+    z-index: 2; }
+    @media (max-width: 1024px) {
+      .Specs img {
+        z-index: 1;
+        position: absolute;
+        width: 400px; } }
+
+/*! Ist für Darkmode bei einigen Section mit der Klasse */
+.invert {
+  background: var(--color_3) !important; }
+  .invert:before {
+    background: rgba(0, 0, 0, 0) !important;
+    z-index: 1; }
+  .invert h2 {
+    color: var(--color_4) !important; }
+  .invert h3 {
+    color: var(--color_p) !important; }
+  .invert p {
+    color: var(--color_lightw) !important; }
+
+/*! ############################## */
+/*! Footer */
+/*! ############################## */
+footer {
+  min-height: 300px;
+  background: #363636; }
+  footer .logo_long {
+    max-width: 300px;
+    margin: 50px 0px; }
+  footer .footer_links {
+    margin: 0 50%; }
+    footer .footer_links a {
+      color: #f0f0f0;
+      font-family: "Roboto", sans-serif;
+      text-decoration: none;
+      padding: 10px;
+      display: block;
+      white-space: nowrap;
+      text-align: center;
+      transition: opacity 0.3s ease; }
+      footer .footer_links a:hover {
+        opacity: 0.8; }
+
+

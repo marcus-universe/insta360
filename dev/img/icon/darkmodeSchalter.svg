@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 453.56 223.11">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f74b4b;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 4.89px;
+      }
+    </style>
+  </defs>
+  <g id="Ebene_2" data-name="Ebene 2">
+    <g id="Darkmode">
+      <rect id="BG" class="cls-1" width="453.56" height="223.11" rx="111.55"/>
+      <path id="Moon" class="cls-2" d="M417.12,144a61.56,61.56,0,1,1-65.6-93.39,61.56,61.56,0,0,0,51.7,95A61.89,61.89,0,0,0,417.12,144Z"/>
+      <g id="Sun">
+        <circle class="cls-2" cx="114.82" cy="111.55" r="40.22"/>
+        <line class="cls-3" x1="114.82" y1="60.83" x2="114.82" y2="28.94"/>
+        <line class="cls-3" x1="89.46" y1="67.62" x2="73.51" y2="40.01"/>
+        <line class="cls-3" x1="70.89" y1="86.19" x2="43.28" y2="70.25"/>
+        <line class="cls-3" x1="64.09" y1="111.55" x2="32.21" y2="111.55"/>
+        <line class="cls-3" x1="70.89" y1="136.92" x2="43.28" y2="152.86"/>
+        <line class="cls-3" x1="89.46" y1="155.49" x2="73.51" y2="183.1"/>
+        <line class="cls-3" x1="114.82" y1="162.28" x2="114.82" y2="194.17"/>
+        <line class="cls-3" x1="140.18" y1="155.49" x2="156.13" y2="183.1"/>
+        <line class="cls-3" x1="158.75" y1="136.92" x2="186.37" y2="152.86"/>
+        <line class="cls-3" x1="165.55" y1="111.55" x2="197.43" y2="111.55"/>
+        <line class="cls-3" x1="158.75" y1="86.19" x2="186.37" y2="70.25"/>
+        <line class="cls-3" x1="140.18" y1="67.62" x2="156.13" y2="40.01"/>
+      </g>
+    </g>
+    <g id="Schalter">
+      <circle id="Schalter-2" data-name="Schalter" class="cls-2" cx="114.5" cy="112.1" r="93.62"/>
+    </g>
+  </g>
+</svg>

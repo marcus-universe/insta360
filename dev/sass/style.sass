@@ -1,0 +1,674 @@
+/*! Marcus Harting
+
+@import _settings
+@import _include-media.scss
+
+html
+    scroll-behavior: smooth
+
+body
+    margin: 0
+    padding: 0
+    width: 100%
+    // overflow-x: hidden
+    background: var(--color_3)
+
+/*! ################################
+/*! Responsive Flexbox/Grid Klassen
+/*! ################################
+.flex_h_c
+    display: flex
+    flex-direction: row
+    justify-content: center
+
+.flex_v_c
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+.grid_c
+    display: grid
+    place-items: center
+
+/*! ################################
+/*! Animations + Klassen
+/*! ################################
+        
+.animShow
+    transform: scale(1) !important
+    
+
+/*! ##############################
+/*! Navigation
+/*! ##############################
+    
+nav
+    position: fixed
+    width: 100%
+    z-index: 99
+    background: $color_p
+    @include media('<tablet')
+        height: 80px
+    .Nav_Elements
+        justify-content: space-around
+        width: 70%
+        max-width: 1000px
+        @include media('<=tablet')
+            width: 100%
+    .logo
+        position: absolute
+        top: 8px
+        width: 40px
+        left: 5%
+        transition: filter 0.3s ease
+        @include media('<tablet')
+            left: 50%
+            width: 50px
+            transform: translateX(-50%)
+            top: 15px
+    ul
+        list-style: none
+        width: 50%
+        min-width: 640px
+        padding: 0
+        margin: 0
+        font-size: 1rem
+        @include media('<tablet')
+            position: absolute
+            top: 0px
+            width: 100%
+            height: 100vh
+            padding-top: 20%
+            font-size: 2.5rem
+            flex-direction: column !important
+            justify-content: start !important
+            text-align: center
+            background: rgba($color_p, 0.8)
+            backdrop-filter: blur(5px)
+            min-width: 0px
+            transition: right 0.3s ease
+            // transform: translateX(100%)
+            right: -100%
+
+        li
+            display: block
+            white-space: nowrap
+            font-family: $Text
+            font-weight: 600
+            color: $color_w
+            transition: background 0.3s ease
+            @include media('<tablet')
+                padding: 10px 0px
+                text-align: center
+                margin: 0
+                
+            a
+                display: block
+                color: rgba($color_w, 0.7)
+                text-decoration: none
+                padding: 20px 20px
+                transition: color 0.3s ease
+                @include media('<tablet')
+                    padding: 10px 0px
+                    color: rgba($color_w, 1)
+                    text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6)
+
+            &:hover
+                background: rgba($color_w, 0.2)
+                cursor: pointer
+            &:hover > a
+                color: $color_w
+
+    .ActiveMobileMenu
+        right: 0px
+
+    .MobileButton
+        width: 80px
+        position: absolute
+        top: 0
+        right: 5%
+        display: none
+        @include media('<tablet')
+            display: block
+        &:hover
+            cursor: pointer
+    
+
+        svg path
+            fill: var(--color_3)
+        
+    /*! ##############################
+    /*! Darkmode
+    /*! ##############################
+    .darkmode_schalter
+        width: 50px
+        position: absolute
+        right: 5%
+        top: 15px
+        @include media('<tablet')
+            right: 0
+            left: 5%
+            top: 15px
+            width: 100px
+            padding: 0px 0px
+        &:hover
+            cursor: pointer
+        .bg 
+            fill: var(--color_3)
+                
+          
+        .filler 
+            fill: var(--color_p)
+                
+          
+        .sunline 
+            fill: none
+            stroke: var(--color_p)
+            stroke-miterlimit: 10
+            stroke-width: 4.89px
+        #Schalter
+            transition: transform 0.3s ease
+        .SchalterActive
+            transform: translateX(50%)
+        
+/*! ##############################
+/*! Kaufen Button
+/*! ##############################
+.kaufenButton
+    display: block
+    font-family: $Text
+    padding: 15px
+    width: 20%
+    min-width: 150px
+    border-radius: 20px
+    margin: 3rem auto 0rem auto
+    color: $color_p
+    font-size: 1rem
+    background: $color_3
+    font-weight: 800
+    text-decoration: none
+    transition: all 0.3s ease
+    &:hover
+        box-shadow: 0px 0px 20px rgba($color_3, 0.5)
+        transform: scale(1.05)
+
+
+/*! ##############################
+/*! Vorstellung / Start
+/*! ##############################
+
+.Start
+    height: 100vh
+    width: 100%
+    background: $color_p
+    overflow: hidden
+    position: relative
+    @include media('<=tablet')
+        .flex_h_c
+            flex-wrap: wrap
+
+    .headlines
+        padding: 30vh 0px 0px 5%
+        width: 40%
+        text-align: center
+        @include media('<=tablet')
+            width: 100%
+            padding-top: 20vh
+            
+        h1
+            margin-top: 20%
+            font-family: $Text
+            font-size: 2.8rem
+            color: $color_3
+            margin: 0px
+        h2
+            color: $color_s
+            font-family: $Headline
+            font-weight: 200
+            margin: 0px
+            font-size: 1.8rem
+    .Wave
+        position: absolute
+        bottom: 0
+        left: 50%
+        transform: translateX(-50%)
+        z-index: 3
+        width: 100%
+        min-width: 1600px
+        path
+            fill: var(--color_3)
+
+.insta_1
+    width: 600px
+    margin-top: 100px
+    @include media('<=tablet')
+        width: 100%
+        min-width: 500px
+        max-width: 600px
+        margin-top: 0px
+    
+
+
+
+/*! ########################################################
+/*! ONEX2, Flowstate, Features, Premium Set, Social_Media
+/*! ########################################################
+.ONEX2
+    min-height: 100vh
+    position: relative
+    @include media('<=tablet')
+        flex-wrap: wrap-reverse !important
+    .Image360
+        width: 100%
+        height: 300px
+        position: absolute
+        bottom: 0
+        z-index: 1
+
+.Flowstate, .ONEX2, .Features, .Premium_Set, .Social_Media
+    background: url('../img/BG/vortex.svg')
+    background-repeat: no-repeat
+    background-size: cover
+    min-height: 100vh
+    width: 100%
+    max-width: 100vw
+    @include media('<=tablet')
+        flex-wrap: wrap
+    &:before
+        content: ' '
+        display: block
+        background: rgba($color_p, 0.5)
+        position: absolute
+        height: 100%
+        width: 100%
+        
+    .imageContainer
+        height: 100%
+        min-height: 100vh
+        padding: 0px 5%
+        position: relative
+        width: 600px
+        @include media('<=desktop')
+            width: 500px
+        @include media('<=tablet')
+            min-height: 500px
+        @include media('<=phone')
+            width: 300px
+            padding: 0px
+        .img_side
+            position: absolute
+            top: 50%
+            border-radius: 20px
+            box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.3)
+            @include media('<=tablet')
+                top: 0%
+                position: relative
+
+        .flowstate_img
+            width: 600px
+            height: 600px
+            @include media('<=desktop')
+                width: 500px
+                height: 500px
+            @include media('<=phone')
+                width: 300px
+                height: 300px
+    .oneX2_img_container
+        @include media('<=phone')
+            width: 350px
+        $width_oneX2: 600px
+        $height_oneX2: 810px
+
+        .oneX2_img
+            width: calc(#{$width_oneX2} - 60px)
+            height: calc(#{$height_oneX2} - 60px)
+            box-shadow: 0px 0px 0px black
+            @include media('<=desktop')
+                width: calc(#{$width_oneX2} - 100px)
+                height: calc(#{$height_oneX2} - 100px)
+            @include media('<=phone')
+                width: calc(#{$width_oneX2} - 250px)
+                height: calc(#{$height_oneX2} - 300px)
+
+
+    
+
+
+    .premium_set_img_container
+        width: 600px
+        position: relative
+        
+        @include media('<=tablet')
+            width: 500px      
+        .premium_set_img
+            position: absolute !important
+            width: 600px
+            height: 600px
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0) !important
+
+            @include media('<=tablet')
+                width: 500px
+                height: 500px
+                top: 0px
+                
+            @include media('<=phone')
+                padding: 0px
+                width: 300
+                top: 0%
+                
+
+    /*! ##############################
+    /*! Textboxen 
+    /*! ##############################
+    .flowstate_info, .OneX2_info, .features_info, .premium_set_info, .social_media_info
+        padding: 35vh 10% 0% 10%
+        z-index: 2
+        @include media('<=tablet')
+            padding: 0 10%
+            margin-top: 100px
+    
+        h2
+            font-family: $Text
+            color: $color_3
+            font-size: 2rem
+            margin: 0
+            padding: 0
+            @include media('<=phone')
+                text-align: center
+        h3
+            font-family: $Headline
+            color: var(--color_s)
+            font-weight: 200
+            margin: 0
+            padding: 0
+            @include media('<=phone')
+                text-align: center
+        p
+            max-width: 500px
+            width: clamp(200px 50% 400px)
+            font-family: $Text
+            font-weight: 400
+            color: $color_lightw
+            @include media('<=desktop')
+                max-width: 300px
+            @include media('<=phone')
+                text-align: center
+        .bigger_paragraph
+            max-width: 600px !important
+            width: clamp(300px 50% 500px) !important
+            @include media('<=desktop')
+                max-width: 500px !important
+
+    .OneX2_info
+        padding: 25vh 10% 0% 10%
+        @include media('<=tablet')
+            padding: 0 10%
+            margin-top: 20px
+
+    .features_info
+        padding: 4rem 0
+        h2, h3
+            text-align: center !important
+        h2
+            font-size: 2.5rem
+        p
+            max-width: 700px
+            text-align: center
+            padding: 10px 10%
+
+
+    .premium_set_info
+        padding: 35vh 5% 0% 5%
+        @include media('<=tablet')
+            padding: 0 10%
+            margin-top: 100px
+        h2, h3
+            @include media('<=tablet')
+                text-align: center
+                
+        .BottomButton
+            background: var(--color_p)
+            color: var(--color_3)
+            margin: 0 0 0 20px
+            display: block
+            width: 100px
+            text-align: center
+            padding: 20px
+            box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3)
+            @include media('<=tablet')
+                margin: 0 auto
+            &:hover
+                background: var(--color_h)
+                box-shadow: 0px 0px 10px var(--color_h)
+
+    .premium_set_info > .bigger_paragraph
+        max-width: 400px
+        padding: 0 5%
+        
+
+
+    .social_media_info
+        padding-top: 100px
+        text-align: center
+        position: relative
+        margin-bottom: 40px
+        h2
+            font-size: 2.5rem
+        h3
+            margin-top: 5px
+            font-size: 1.3rem
+        p
+            margin: 20px auto 0 auto
+        @include media('<=tablet')
+            margin-top: 0
+
+    .socialIcons
+        position: relative
+        a
+            width: 80px
+            height: 80px
+            margin: 0px 20px
+            svg
+                width: 70px
+                
+                transition: all 0.3s ease
+                &:hover
+                    width: 80px
+
+                path
+                    fill: $color_3
+
+
+/*! ########################################################
+/*! Social Media Überschreiben
+/*! ########################################################
+.Social_Media
+    min-height: 580px
+    padding-bottom: 40px
+    &:before
+        height: auto
+        min-height: 620px    
+/*! ########################################################
+/*! Features Überschreiben
+/*! ########################################################
+.Features
+    margin-bottom: 100px            
+                
+    /*! Feature Boxen
+    .feature_container
+        flex-wrap: wrap
+        .feature_box
+            background: var(--color_p)
+            z-index: 2
+            width: 300px
+            padding: 50px
+            margin: 10px 5%
+            border-radius: 20px
+            box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.3)
+            transform: scale(0.5)
+            transition: transform 0.3s ease
+            .lottieIcon
+                width: 200px
+                height: 200px
+                margin: 0 auto
+                svg path
+                    fill: var(--color_3)
+
+            h3
+                font-family: $Text
+                font-size: 1.5rem
+                text-align: center
+                color: var(--color_lightd) !important
+            p
+                font-family: $Text
+                font-weight: 400
+                font-size: 1rem
+                color: var(--color_lightd) !important
+                text-align: left
+
+
+
+
+
+
+/*! ##############################
+/*! Google-Maps
+/*! ##############################
+.GoogleMapsSection
+    border-top: 3px var(--color_p) solid
+    h2
+        font-family: $Text
+        margin: 70px 0 0 0
+        color: var(--color_4)
+        font-size: 2rem
+        text-align: center
+    h3
+        font-family: $Headline
+        text-align: center
+        color: var(--color_p)
+        font-weight: 200
+        font-size: 1.3rem
+        margin: 10px 0 0 0
+    p
+        font-family: $Text
+        font-weight: 400
+        color: var(--color_lightw)
+        text-align: center
+        max-width: 700px
+        min-width: 250px
+        width: 50%
+        margin: 0 auto
+        padding: 10px 0px 40px 0px
+    .GoogleMaps
+        height: 600px
+        width: 70%
+        margin: 0 auto 20px auto
+        transform: scale(0.5)
+        transition: transform 0.3s ease
+        @include media('<=phone')
+            height: 300px
+
+/*! ##############################
+/*! Spezifikationen
+/*! ##############################
+.Specs
+    position: relative
+    // background: $color_p
+    background: url('../img/BG/vortex.svg')
+    background-repeat: no-repeat
+    background-size: cover
+    min-height: 100vh
+    &:before
+        content: ' '
+        display: block
+        background: rgba($color_p, 0.5)
+        position: absolute
+        height: 100%
+        width: 100%
+    @include media('<=tablet')
+        flex-wrap: wrap
+        overflow: hidden
+    h2
+        color: $color_3
+        font-size: 2rem
+        margin: 100px 0 0 0
+        @include media('<=tablet')
+            text-align: center
+    h3
+        color: $color_s
+        margin: 0
+        font-family: $Headline
+        font-weight: 200
+        font-size: 1.4rem
+        @include media('<=tablet')
+            text-align: center
+    .SpecList
+        font-family: $Text
+        color: $color_lightw
+        padding: 0px 5%
+        z-index: 2
+        @include media('<=tablet')
+           
+            background: rgba($color_4, 0.7)
+            backdrop-filter: blur(2px)
+            box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.3) 
+        ul
+            list-style: none
+            letter-spacing: 0.04rem
+            font-size: 1.1rem
+            li
+                line-height: 34px
+                b
+                    color: $color_s
+                .u_punkt_h
+                    color: $color_3
+                    line-height: 10px
+    img
+        width: 300px
+        height: auto
+        padding: 0px 10% 0 10%
+        margin-top: 40px
+        z-index: 2
+        @include media('<=tablet')
+            z-index: 1
+            position: absolute
+            width: 400px
+
+
+/*! Ist für Darkmode bei einigen Section mit der Klasse */
+.invert
+    background: var(--color_3) !important
+    &:before
+        background: rgba(0,0,0,0) !important
+        z-index: 1
+    h2
+        color: var(--color_4) !important
+    h3
+        color: var(--color_p) !important
+    p
+        color: var(--color_lightw) !important
+
+
+/*! ##############################
+/*! Footer
+/*! ##############################
+
+footer
+    min-height: 300px
+    background: $color_4
+    .logo_long
+        max-width: 300px
+        margin: 50px 0px
+    .footer_links
+        margin: 0 50%
+        a
+            color: $color_3
+            font-family: $Text
+            text-decoration: none
+            padding: 10px
+            display: block
+            white-space: nowrap
+            text-align: center
+            transition: opacity 0.3s ease
+            &:hover
+                opacity: 0.8

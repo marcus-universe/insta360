@@ -1,0 +1,22 @@
+                            
+/* TEAM */
+                            
+Name: Marcus Dennis Harting
+
+Artstation: https://www.artstation.com/marcustutorials
+Youtube: https://www.youtube.com/user/MarcusTutorials1
+Twitter: @marcustutorials
+
+                            
+Location: Hamburg, Germany.
+						
+                            
+/* SITE */
+              
+Last update: 2021/09/13 
+                           
+Standards: HTML5, CSS3, Javascript, SVG
+                      
+Components: Lottie.js, NodeJS
+                            
+Software: Blender, VSCode, Photoshop, Illustrator
