@@ -27,7 +27,7 @@ const gulpEsbuild = createGulpEsbuild({ incremental: true });
 
 // Define important variables
 const src = './dev';
-const dest = './insta360';
+const dest = './insta360_one_x2';
 const useTypeScript = false;
 
 // Reload the browser
