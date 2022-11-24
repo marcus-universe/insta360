@@ -1,4 +1,4 @@
-# insta360.github.io
+# Insta 360 One X2 Premium Set
 
 I created a Website for the **Insta 360 One X2 Premium Set**. I added self created 3D renders of the product and also coded the whole website in HTML, CSS and JavaScript. The website is fully responsive and works on all devices. For the Website, I also created 360 Panoramas for Google Street View. These Images are created with an DSLR Camera on a tripod and be stitched together into a 360 Panorama
 
